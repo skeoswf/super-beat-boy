@@ -5,11 +5,72 @@ const sounds = [
     location: "./sounds/boom.wav",
     buttonAssigned: "shiftKey",
     active: true
-  }
+  },
+  {
+    id: 2,
+    name: "clap",
+    location: "./sounds/clap.wav",
+    buttonAssigned: "crtlKey",
+    active: true
+  },
+  {
+    id: 3,
+    name: "hihat",
+    location: "./sounds/hihat.wav",
+    buttonAssigned: "a",
+    active: true
+  },
+  {
+    id: 4,
+    name: "kick",
+    location: "./sounds/kick.wav",
+    buttonAssigned: "w",
+    active: true
+  },
+  {
+    id: 5,
+    name: "openhat",
+    location: "./sounds/openhat.wav",
+    buttonAssigned: "s",
+    active: true
+  },
+  {
+    id: 6,
+    name: "ride",
+    location: "./sounds/ride.wav",
+    buttonAssigned: "d",
+    active: true
+  },
+  {
+    id: 7,
+    name: "snare",
+    location: "./sounds/snare.wav",
+    buttonAssigned: " ",
+    active: true
+  },
+  {
+    id: 8,
+    name: "tink",
+    location: "./sounds/tink.wav",
+    buttonAssigned: "ArrowLeft",
+    active: true
+  },
+  {
+    id: 9,
+    name: "tom",
+    location: "./sounds/tom.wav",
+    buttonAssigned: "ArrowRight",
+    active: true
+  },
 ]
 
+export default sounds;
 
 // id, name, sound location, button assigned,
 // if deleted, adjust property active
 // && active - main display
 // else, other array
+
+
+
+// <!--shift, leftcrtl, a, w, d, space, left arrow, up arrow, right arrow, down arrow

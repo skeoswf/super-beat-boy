@@ -5,17 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css" />
+  <link rel="icon" type="image/x-icon" href="./images/faviconbeat2.png">
   <title>javascript drumma</title>
 </head>
 
 <body>
 
   <div class="beatBox">
+
+
+
     <button class="soundButton">
       <p class="sound">BOOM!</p>
       <p class="hotkey">shift</p>
     </button>
-    <button class="soundButton">
+
+
+
+    <!-- <button class="soundButton">
       <p>clap</p>
     </button>
     <button class="soundButton">
@@ -38,14 +45,14 @@
     </button>
     <button class="soundButton">
       <p>tom</p>
-    </button>
+    </button> -->
   </div>
 </body>
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 
 </html>
 
-<!--shift, leftcrtl, a, w, d, space, left click, right click 
+<!--shift, leftcrtl, a, w, d, space, left arrow, up arrow, right arrow, down arrow
 
 later on a user could upload a sound, and while they upload a sound, ask them to assign a hotkey.
 
@@ -58,4 +65,8 @@ BUT l+r is just weird on browsers sometimes man. and what if the fuckin yk right
 what if they hover long enough over a soundbutton, theyd see a text block over or near that button that says [press a key to reassign], and when they click a button (by accident or otherwise) the text says [change sound (or whatever) to '_'? ESC to cancel/ ENTER to confirm]
 
 thats fun i like that. now im wondering if they hover off -- should that text box stay or just leave? we can just feel that one and decide. 
+
+im also wondering -- if at this point we shouldnt hard code buttons like this in html. a sound button wrapper with sounds with preassigned buttons in it. wed pull the existing sounds out of an array, and one of the properties of the array could be the preassigned button.
+
+and in that case, we should let them delete sounds too, right? but i also want a way to "move" deleted sounds to another array for reaccess. it's just sounds.
 -->
