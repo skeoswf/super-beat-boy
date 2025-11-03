@@ -3,14 +3,14 @@ const sounds = [
     id: 1,
     name: "boom",
     location: "./sounds/boom.wav",
-    buttonAssigned: "shiftKey",
+    buttonAssigned: "Shift",
     active: true
   },
   {
     id: 2,
     name: "clap",
     location: "./sounds/clap.wav",
-    buttonAssigned: "crtlKey",
+    buttonAssigned: "ctrlKey",
     active: true
   },
   {
@@ -64,13 +64,8 @@ const sounds = [
   },
 ]
 
-export default sounds;
+const deletedSounds = [
 
-// id, name, sound location, button assigned,
-// if deleted, adjust property active
-// && active - main display
-// else, other array
+]
 
-
-
-// <!--shift, leftcrtl, a, w, d, space, left arrow, up arrow, right arrow, down arrow
+export { sounds, deletedSounds }
