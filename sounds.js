@@ -10,7 +10,7 @@ const sounds = [
     id: 2,
     name: "clap",
     location: "./sounds/clap.wav",
-    buttonAssigned: "ctrlKey",
+    buttonAssigned: "Control",
     active: true
   },
   {
