@@ -1,46 +1,54 @@
 import { sounds, deletedSounds } from './sounds.js'
 
+const soundsWrapper = document.getElementById("soundsWrapper")
 
+const renderSounds = () => {
 
+  let soundsWrapperContent = "";
 
-for (let i = 0; i < sounds.length; i++) {
-  console.log(sounds[i].name)
-}
+  for (let i = 0; i < sounds.length; i++) {
+    console.log(sounds[i].name);
 
+    soundsWrapperContent +=
+      `
+    <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
+      <p class="sound">${sounds[i].name}!</p>
+      <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned.toUpperCase()}</p>
+    </button>`
 
-// do the one under for each one
+    soundsWrapper.innerHTML = soundsWrapperContent;
 
-const boomButton = document.getElementById("boomButton--1");
-
-const boomAudio = new Audio('./sounds/boom.wav')
-
-const boom = () => {
-  console.log("the demon has called upon man's indignation");
-  const boom = boomAudio.cloneNode();
-  boom.play();
-}
-
-// when you keydown, it clicks it 
-document.addEventListener('keydown', (e) => {
-  if ((e.key) === 'Shift') {
-    document.getElementById("boomButton--1").click();
   }
-});
 
-// when you click it (or because you keyed down, triggering click), it plays it
-boomButton.addEventListener('click', (e) => {
-  e.preventDefault;
-  boom();
-})
+  for (let i = 0; i < sounds.length; i++) {
+    let soundsButtonId = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
+    let soundsAudio = new Audio(sounds[i].location)
 
-// do the one under for each one as well
+    let soundsPlay = () => {
+      let soundsPlay = soundsAudio.cloneNode();
+      soundsPlay.play();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.key) === sounds[i].buttonAssigned) {
+        document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`).click();
+      }
+    })
+
+    soundsButtonId.addEventListener('click', (e) => {
+      e.preventDefault();
+      soundsPlay();
+    })
+
+  }
+
+  console.log(soundsButtonId)
+  console.log(soundsAudio)
+}
+
+renderSounds()
 
 
+// edge case -- if key assigned is space, the innerhtml should read space instead of empty key
 
-// for each loop we need to:
-//   make an audio const for each sounds[boomAudio]
-//   make a function for that sound that clonesnodes and play
-//   an event listener for each that pseudo click the button and also plays the sound
-//   make an onclick as well
-
-// make a 
+// what if you entered a youtube video and it auto selects timestamps to use as audio bits and assigns that --> repurpose from user selected audio to youtube video. adds to the easy and cool and unique no? 

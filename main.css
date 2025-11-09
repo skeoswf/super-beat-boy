@@ -1,9 +1,25 @@
 body {
-  background-color: beige;
+  background-color: rgb(25, 196, 173);
 }
 
 .beatBox {
-  background-color: rgb(22, 223, 146);
+  background-color: rgb(25, 196, 173);
+  height: 30vh;
+  min-height: 200px;
+  width: 75%;
+  min-width: 600px;
   margin: 0 auto;
+  margin-top: 25vh;
   display: flex;
+  justify-content: space-around
+}
+
+.soundButton {
+  height: 100px;
+  width: 100px;
+  border-radius: 20%;
+}
+
+.soundHotkey {
+  font-size: 80%;
 }
