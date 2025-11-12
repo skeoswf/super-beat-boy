@@ -49,6 +49,9 @@ const renderSounds = () => {
 renderSounds()
 
 
-// edge case -- if key assigned is space, the innerhtml should read space instead of empty key
+// background
+// ui stuff
+// edge cases
 
-// what if you entered a youtube video and it auto selects timestamps to use as audio bits and assigns that --> repurpose from user selected audio to youtube video. adds to the easy and cool and unique no? 
+// deleted sounds array
+// neo brutalism library
