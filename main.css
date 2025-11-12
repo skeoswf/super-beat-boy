@@ -1,25 +1,25 @@
 body {
-  background-color: rgb(25, 196, 173);
+  background: url("./images/background.jpg") center / cover no-repeat fixed;
 }
 
 .beatBox {
-  background-color: rgb(25, 196, 173);
+  width: 75%;
   height: 30vh;
   min-height: 200px;
-  width: 75%;
-  min-width: 600px;
-  margin: 0 auto;
-  margin-top: 25vh;
+  margin: 25vh auto 0;
   display: flex;
-  justify-content: space-around
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 .soundButton {
   height: 100px;
-  width: 100px;
+  min-width: 100px;
   border-radius: 20%;
 }
 
 .soundHotkey {
-  font-size: 80%;
+  font-size: clamp(0.65rem, 1.4vw, 0.8rem);
 }
