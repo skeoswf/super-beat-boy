@@ -4,50 +4,56 @@ const soundsWrapper = document.getElementById("soundsWrapper")
 
 const renderSounds = () => {
 
-  let soundsWrapperContent = "";
 
-  for (let i = 0; i < sounds.length; i++) {
-    console.log(sounds[i].name);
+  const renderSoundbuttons = () => {
 
-    soundsWrapperContent +=
-      `
+    let soundsWrapperContent = "";
+    for (let i = 0; i < sounds.length; i++) {
+      console.log(sounds[i].name);
+
+      soundsWrapperContent +=
+        `
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned.toUpperCase()}</p>
     </button>`
 
-    soundsWrapper.innerHTML = soundsWrapperContent;
+      soundsWrapper.innerHTML = soundsWrapperContent;
 
-  }
-
-  for (let i = 0; i < sounds.length; i++) {
-    let soundsButtonId = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
-    let soundsAudio = new Audio(sounds[i].location)
-
-    let soundsPlay = () => {
-      let soundsPlay = soundsAudio.cloneNode();
-      soundsPlay.play();
     }
-
-    document.addEventListener('keydown', (e) => {
-      if ((e.key) === sounds[i].buttonAssigned) {
-        document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`).click();
-      }
-    })
-
-    soundsButtonId.addEventListener('click', (e) => {
-      e.preventDefault();
-      soundsPlay();
-    })
-
   }
 
-  console.log(soundsButtonId)
-  console.log(soundsAudio)
+  const soundButtonFunctionality = () => {
+    for (let i = 0; i < sounds.length; i++) {
+      let soundsButtonId = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
+      let soundsAudio = new Audio(sounds[i].location)
+
+      let soundsPlay = () => {
+        let soundsPlay = soundsAudio.cloneNode();
+        soundsPlay.play();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if ((e.key) === sounds[i].buttonAssigned) {
+          document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`).click();
+        }
+      })
+
+      soundsButtonId.addEventListener('click', (e) => {
+        e.preventDefault();
+        soundsPlay();
+      })
+
+    }
+  }
+
+  renderSoundbuttons()
+  soundButtonFunctionality()
 }
 
 renderSounds()
 
+// lowk kinda wanna break this down into like 3 parts
 
 // background
 // ui stuff
@@ -55,3 +61,5 @@ renderSounds()
 
 // deleted sounds array
 // neo brutalism library
+
+// display box showing what you just played??
