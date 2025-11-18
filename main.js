@@ -12,9 +12,14 @@ const renderSounds = () => {
       soundsWrapperContent +=
         `
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
-      <p class="sound">${sounds[i].name}!</p>
+      <p class="sound">${sou
+        nds[i].name
+    } !</p >
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned.toUpperCase()}</p>
-    </button>`
+      <div class="deleteButton" id="delete--${sounds[i].id}">test</div>
+    </button >
+
+  `
 
       soundsWrapper.innerHTML = soundsWrapperContent;
 
@@ -23,7 +28,7 @@ const renderSounds = () => {
 
   const soundButtonFunctionality = () => {
     for (let i = 0; i < sounds.length; i++) {
-      let soundsButtonId = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
+      let soundsButtonId = document.getElementById(`${ sounds[i].name } Button--${ sounds[i].id } `)
       let soundsAudio = new Audio(sounds[i].location)
 
       let soundsPlay = () => {
@@ -33,7 +38,7 @@ const renderSounds = () => {
 
       document.addEventListener('keydown', (e) => {
         if ((e.key) === sounds[i].buttonAssigned) {
-          document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`).click();
+          document.getElementById(`${ sounds[i].name } Button--${ sounds[i].id } `).click();
         }
       })
 
