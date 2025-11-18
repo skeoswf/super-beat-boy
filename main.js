@@ -6,10 +6,8 @@ const renderSounds = () => {
 
 
   const renderSoundbuttons = () => {
-
     let soundsWrapperContent = "";
     for (let i = 0; i < sounds.length; i++) {
-      console.log(sounds[i].name);
 
       soundsWrapperContent +=
         `
