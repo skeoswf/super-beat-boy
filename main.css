@@ -23,3 +23,13 @@ body {
 .soundHotkey {
   font-size: clamp(0.65rem, 1.4vw, 0.8rem);
 }
+
+#inputDisplay {
+  background-color: red;
+  width: 25%;
+  height: 10vh;
+  min-height: 45px;
+  margin: 5vh auto 0;
+  text-align: center;
+  padding-top: 40px;
+}
