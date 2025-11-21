@@ -46,8 +46,18 @@ const renderSounds = () => {
         e.preventDefault();
         soundsPlay();
 
-        inputDisplay.innerHTML += `<br> <span class="inputDisplayText"> ${sounds[i].name} </span> `
+        const span = document.createElement('span');
+        span.classList.add('inputDisplayText');
+        span.textContent = ` ${sounds[i].name} `;
 
+        const br = document.createElement('br');
+        inputDisplay.appendChild(br);
+        inputDisplay.appendChild(span);
+
+        setTimeout(() => {
+          span.remove();
+          br.remove();
+        }, 700);
       })
 
     }
