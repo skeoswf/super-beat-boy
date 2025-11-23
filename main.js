@@ -69,13 +69,4 @@ const renderSounds = () => {
 
 renderSounds()
 
-// lowk kinda wanna break this down into like 3 parts
-
-// background
-// ui stuff
-// edge cases
-
-// deleted sounds array
-// neo brutalism library
-
-// display box showing what you just played??
+// wjat if display box had softer edges as you kept playing but when there's no audio it goes back sharp 
