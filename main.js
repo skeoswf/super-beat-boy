@@ -14,7 +14,7 @@ const renderSounds = () => {
       `
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
-      <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned.toUpperCase()}</p>
+      <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned === " " ? "SPACE" : sounds[i].buttonAssigned.toUpperCase()}</p>
     </button>
   
     `
