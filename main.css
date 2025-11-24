@@ -18,6 +18,16 @@
   }
 }
 
+.dimIn {
+  animation: blinkIn 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.dimOut {
+  animation: blinkOut 0.6s;
+
+}
+
 body {
   background: url("./images/background.jpg") center / cover no-repeat fixed;
   caret-color: transparent;
@@ -41,8 +51,14 @@ body {
   height: 100px;
   min-width: 100px;
   text-align: left;
-  clip-path: polygon(60% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(75% 0, 100% 25%, 100% 100%, 0 100%, 0 0);
   overflow: visible;
+  opacity: 85%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(44, 44, 44);
+  color: red;
+  text-shadow: 0px 0px 8px rgb(0, 0, 0)
 }
 
 .soundHotkey {
@@ -110,9 +126,4 @@ body {
   left: 0;
   pointer-events: none;
   opacity: 0;
-}
-
-.dimIn {
-  animation: blinkIn 0.6s;
-  animation-fill-mode: forwards;
 }
