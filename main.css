@@ -8,9 +8,14 @@
   }
 }
 
-@keyframes do,
-{
-0% {}
+@keyframes blinkIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 body {
@@ -93,14 +98,21 @@ body {
   opacity: 50%;
 }
 
-#test {
-  background-color: pink;
+/* layer that appears. if it slowly appears, we just define an animation that makes it 0-100, lets give the actual color the opacity value */
+
+#dimOverlay {
+  background-color: rgba(0, 37, 44, 0.85);
   width: 100vw;
   height: 100vh;
   z-index: 998;
   position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
+  opacity: 0;
+}
 
-  opacity: ;
+.dimIn {
+  animation: blinkIn 0.6s;
+  animation-fill-mode: forwards;
 }
