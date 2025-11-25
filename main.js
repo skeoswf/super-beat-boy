@@ -33,7 +33,13 @@ const soundButtonFunctionality = () => {
     }
     document.addEventListener('keydown', (e) => {
       if ((e.key) === sounds[i].buttonAssigned) {
-        document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`).click();
+        let buttonKeyDowned = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`);
+        buttonKeyDowned.style.translate = "10px 10px"
+        buttonKeyDowned.click();
+
+        setTimeout(() => {
+          buttonKeyDowned.style.translate = "0px 0px";
+        }, 75)
       }
     })
 
