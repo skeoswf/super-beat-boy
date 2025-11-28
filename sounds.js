@@ -62,10 +62,17 @@ const sounds = [
     buttonAssigned: "ArrowRight",
     active: true
   },
+
 ]
 
 const deletedSounds = [
-
+  {
+    id: 10,
+    name: "bubble pop",
+    location: "./sounds/bubblepop.mp3",
+    buttonAssigned: "r",
+    active: true
+  }
 ]
 
 export { sounds, deletedSounds }
