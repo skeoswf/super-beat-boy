@@ -15,6 +15,7 @@ const renderSounds = () => {
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned === " " ? "SPACE" : sounds[i].buttonAssigned.toUpperCase()}</p>
+      <span id="delete--${sounds[i].id}">🗑️</span>
     </button>
   
     `
@@ -35,11 +36,14 @@ const soundButtonFunctionality = () => {
       if ((e.key) === sounds[i].buttonAssigned) {
         let buttonKeyDowned = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`);
         buttonKeyDowned.style.translate = "10px 10px"
+        buttonKeyDowned.style.boxShadow = "0px 0px 0px"
         buttonKeyDowned.click();
 
         setTimeout(() => {
           buttonKeyDowned.style.translate = "0px 0px";
-        }, 75)
+          buttonKeyDowned.style.boxShadow = "10px 10px 0px rgba(255, 36, 36, 0.76)"
+
+        }, 100)
       }
     })
 
@@ -77,8 +81,8 @@ const editButtonHover = () => {
 }
 
 
-renderSounds()
-soundButtonFunctionality()
-editButtonHover()
+renderSounds();
+soundButtonFunctionality();
+editButtonHover();
 
 // wjat if display box had softer edges as you kept playing but when there's no audio it goes back sharp 
