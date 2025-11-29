@@ -15,7 +15,7 @@ const renderSounds = () => {
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned === " " ? "SPACE" : sounds[i].buttonAssigned.toUpperCase()}</p>
-      <span id="delete--${sounds[i].id}">🗑️</span>
+      <span class="deleteSound" id="delete--${sounds[i].id}">🗑️</span>
     </button>
   
     `
@@ -68,6 +68,19 @@ const soundButtonFunctionality = () => {
   }
 }
 
+soundsWrapper.addEventListener("mousedown", (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--")
+    const index = sounds.findIndex((sound) => sound.id === Number(id))
+    const newArchived = sounds.splice(index, 1)[0]
+    deletedSounds.push(newArchived)
+    console.log(deletedSounds)
+  } else {
+    console.log("notdlete")
+  }
+})
+
+
 const editButtonHover = () => {
   editButton.onmouseover = () => {
     overlay.classList.remove("dimOut")
@@ -84,5 +97,3 @@ const editButtonHover = () => {
 renderSounds();
 soundButtonFunctionality();
 editButtonHover();
-
-// wjat if display box had softer edges as you kept playing but when there's no audio it goes back sharp 
