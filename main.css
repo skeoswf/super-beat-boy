@@ -106,6 +106,8 @@ body {
   padding: 0;
   text-shadow: 0px 0px 5px black;
   width: 10%;
+
+
 }
 
 .inputDisplayText {
@@ -155,6 +157,7 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   margin: auto;
+
   height: 30vh;
   min-height: 200px;
   padding: 10px;
