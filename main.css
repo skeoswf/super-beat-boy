@@ -28,6 +28,10 @@
 
 }
 
+* {
+  cursor: crosshair;
+}
+
 body {
   background: url("./images/background.jpg") center / cover no-repeat fixed;
   caret-color: transparent;
@@ -128,6 +132,7 @@ body {
 #editButton:hover {
   opacity: 1;
   transition: all ease 0.5s;
+  cursor: pointer;
 }
 
 #dimOverlay {
@@ -140,4 +145,8 @@ body {
   top: 0;
   width: 100vw;
   z-index: 998;
+}
+
+.deleteSound:hover {
+  cursor: pointer;
 }
