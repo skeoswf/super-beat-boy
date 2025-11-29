@@ -25,29 +25,16 @@ const renderSounds = () => {
 
 const soundButtonFunctionality = () => {
   for (let i = 0; i < sounds.length; i++) {
-    let soundsButtonId = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
+    let soundsButton = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`)
     let soundsAudio = new Audio(sounds[i].location)
 
     let soundsPlay = () => {
       let soundsPlay = soundsAudio.cloneNode();
       soundsPlay.play();
     }
-    document.addEventListener('keydown', (e) => {
-      if ((e.key) === sounds[i].buttonAssigned) {
-        let buttonKeyDowned = document.getElementById(`${sounds[i].name}Button--${sounds[i].id}`);
-        buttonKeyDowned.style.translate = "10px 10px"
-        buttonKeyDowned.style.boxShadow = "0px 0px 0px"
-        buttonKeyDowned.click();
 
-        setTimeout(() => {
-          buttonKeyDowned.style.translate = "0px 0px";
-          buttonKeyDowned.style.boxShadow = "10px 10px 0px rgba(255, 36, 36, 0.76)"
 
-        }, 100)
-      }
-    })
-
-    soundsButtonId.addEventListener('click', (e) => {
+    soundsButton.addEventListener('click', (e) => {
       e.preventDefault();
       soundsPlay();
 
@@ -67,6 +54,23 @@ const soundButtonFunctionality = () => {
 
   }
 }
+
+document.addEventListener('keydown', (e) => {
+  const sound = sounds.find((s) => s.buttonAssigned === e.key);
+  if (!sound) return;
+
+  const buttonKeyDowned = document.getElementById(`${sound.name}Button--${sound.id}`);
+  if (!buttonKeyDowned) return;
+
+  buttonKeyDowned.style.translate = "10px 10px";
+  buttonKeyDowned.style.boxShadow = "0px 0px 0px";
+  buttonKeyDowned.click();
+
+  setTimeout(() => {
+    buttonKeyDowned.style.translate = "0px 0px";
+    buttonKeyDowned.style.boxShadow = "10px 10px 0px rgba(255, 36, 36, 0.76)";
+  }, 100);
+});
 
 soundsWrapper.addEventListener("mousedown", (e) => {
   if (e.target.id.includes("delete")) {
