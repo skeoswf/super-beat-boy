@@ -71,7 +71,7 @@ const deletedSounds = [
     name: "bubble pop",
     location: "./sounds/bubblepop.mp3",
     buttonAssigned: "r",
-    active: true
+    active: false
   }
 ]
 
