@@ -4,6 +4,7 @@ const soundsWrapper = document.getElementById("soundsWrapper")
 const inputDisplay = document.getElementById("inputDisplay")
 const editButton = document.getElementById("editButton")
 const overlay = document.getElementById("dimOverlay")
+const deleteButton = document.getElementsByClassName("deleteSound")
 
 
 const renderSounds = () => {
@@ -15,7 +16,7 @@ const renderSounds = () => {
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned === " " ? "SPACE" : sounds[i].buttonAssigned.toUpperCase()}</p>
-      <span class="deleteSound" id="delete--${sounds[i].id}">➖</span>
+      <span class="deleteSound" id="delete--${sounds[i].id}" hidden="true">➖</span>
     </button>
   
     `
@@ -100,6 +101,34 @@ const editButtonHover = () => {
   }
 }
 
+const editButtonClick = () => {
+  editButton.onclick = () => {
+    const isEditing = editButton.classList.contains("editButtonTwo");
+
+
+    editButton.classList.remove("editBlink");
+    void editButton.offsetWidth;
+    editButton.classList.add("editBlink");
+
+    if (!isEditing) {
+      editButton.classList.add("editButtonTwo");
+      editButton.innerHTML = "done";
+
+      for (let btn of deleteButton) {
+        btn.hidden = false;
+      }
+    } else {
+      editButton.classList.remove("editButtonTwo");
+      editButton.innerHTML = "edit";
+
+      for (let btn of deleteButton) {
+        btn.hidden = true;
+      }
+    }
+  }
+}
+
+
 const randomNumberZeroToTen = () => {
   let randomNumberZeroToTen = Math.floor(Math.random() * 10);
   return randomNumberZeroToTen;
@@ -126,3 +155,4 @@ switch (randomNumberZeroToTen()) {
 renderSounds();
 soundButtonFunctionality();
 editButtonHover();
+editButtonClick();
