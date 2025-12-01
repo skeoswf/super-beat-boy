@@ -100,6 +100,28 @@ const editButtonHover = () => {
   }
 }
 
+const randomNumberZeroToTen = () => {
+  let randomNumberZeroToTen = Math.floor(Math.random() * 10);
+  return randomNumberZeroToTen;
+}
+
+
+switch (randomNumberZeroToTen()) {
+  case (0):
+    console.log("you got a 0");
+    break;
+  case (1):
+    console.log("you got a 1 fucker");
+    break;
+  case (2):
+    console.log("you got a 2 this time...")
+    break;
+  case (3):
+    console.log("3. that's it. that's IT!!!")
+    break;
+}
+
+
 
 renderSounds();
 soundButtonFunctionality();
