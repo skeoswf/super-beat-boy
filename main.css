@@ -37,6 +37,10 @@
 
 }
 
+.editBlink {
+  animation: blinkIn 0.6s;
+}
+
 * {
   cursor: crosshair;
 }
@@ -117,7 +121,7 @@ body {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 998;
+
   text-shadow: 5px 5px 0px red;
 }
 
@@ -137,14 +141,15 @@ body {
   outline: none;
   text-shadow: 0px 0px 5px black;
   width: 3.5%;
-  z-index: 999;
+  z-index: 10;
+
 }
 
 #editButton:hover {
-  opacity: 1;
-  transition: all ease 0.5s;
   cursor: pointer;
 }
+
+
 
 #dimOverlay {
   background-color: rgba(0, 37, 44, 0.685);
@@ -155,7 +160,7 @@ body {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 998;
+  z-index: 5;
 }
 
 .deleteSound:hover {
@@ -173,8 +178,6 @@ body {
   min-height: 200px;
   padding: 10px;
   width: 50%;
-
-
 }
 
 #supaBeatBoyWrappa {
@@ -182,5 +185,4 @@ body {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   z-index: 999;
-
 }
