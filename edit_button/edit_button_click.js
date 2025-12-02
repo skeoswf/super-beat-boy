@@ -1,5 +1,6 @@
 const editButton = document.getElementById("editButton")
 const deleteButton = document.getElementsByClassName("deleteSound")
+const trueDeleteButton = document.getElementsByClassName("trueDeleteSound")
 
 const editButtonClick = () => {
   editButton.onclick = () => {
@@ -18,12 +19,20 @@ const editButtonClick = () => {
         btn.hidden = false;
       }
 
+      for (let trueBtn of trueDeleteButton) {
+        trueBtn.hidden = false;
+      }
+
     } else {
       editButton.classList.remove("editButtonTwo");
       editButton.innerHTML = "edit";
 
       for (let btn of deleteButton) {
         btn.hidden = true;
+      }
+
+      for (let trueBtn of trueDeleteButton) {
+        trueBtn.hidden = true;
       }
     }
   }

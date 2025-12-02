@@ -5,6 +5,8 @@ import { buttonKeydownFunctionality } from './sound_buttons/button_keydown.js'
 import { deleteFunctionality } from './edit_button/delete_functionality.js'
 import { editButtonHover } from './edit_button/edit_button_hover.js'
 import { editButtonClick } from './edit_button/edit_button_click.js'
+import { renderArchivedSounds } from './archived_buttons/archived_render.js'
+
 
 
 const randomNumberZeroToTen = () => {
@@ -34,3 +36,4 @@ buttonKeydownFunctionality();
 deleteFunctionality();
 editButtonHover();
 editButtonClick();
+renderArchivedSounds();

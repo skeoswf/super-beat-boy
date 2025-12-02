@@ -2,6 +2,9 @@ import { sounds } from "../sounds_data/sounds.js";
 import { deletedSounds } from "../sounds_data/sounds.js";
 import { renderSounds } from "../sound_buttons/buttons_render.js";
 import { soundButtonFunctionality } from "../sound_buttons/button_functionality.js";
+import { renderArchivedSounds } from "../archived_buttons/archived_render.js";
+
+const trueDeleteButton = document.getElementsByClassName("trueDeleteSound")
 
 const deleteButton = document.getElementsByClassName("deleteSound")
 
@@ -14,10 +17,16 @@ const deleteFunctionality = () => {
       newArchived.active = false;
       deletedSounds.push(newArchived)
       renderSounds();
+      renderArchivedSounds();
+
 
       // keeps the delete after each rerender 
       for (let btn of deleteButton) {
         btn.hidden = false;
+      }
+
+      for (let trueBtn of trueDeleteButton) {
+        trueBtn.hidden = false;
       }
 
       soundButtonFunctionality();
