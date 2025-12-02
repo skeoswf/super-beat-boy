@@ -127,7 +127,7 @@ body {
 
 .inputDisplayText {
   animation: blinkOut 0.9s;
-  font-size: 4rem;
+  font-size: 20rem;
   line-height: 0;
 }
 
