@@ -4,8 +4,10 @@ const renderSounds = () => {
 
   let soundsWrapperContent = "";
   for (let i = 0; i < sounds.length; i++) {
-    soundsWrapperContent +=
-      `
+
+    if (sounds.length >= 1) {
+      soundsWrapperContent +=
+        `
     <button class="soundButton" id="${sounds[i].name}Button--${sounds[i].id}">
       <p class="sound">${sounds[i].name}!</p>
       <p class="soundHotkey" id="${sounds[i].buttonAssigned}Beat">${sounds[i].buttonAssigned === " " ? "SPACE" : sounds[i].buttonAssigned.toUpperCase()}</p>
@@ -13,6 +15,9 @@ const renderSounds = () => {
     </button>
   
     `
+    } else {
+      soundsWrapperContent = "test"
+    }
     soundsWrapper.innerHTML = soundsWrapperContent;
   }
 }
