@@ -1,10 +1,13 @@
 
 import { renderSounds } from './sound_buttons/buttons_render.js'
+
 import { soundButtonFunctionality } from './sound_buttons/button_functionality.js'
 import { buttonKeydownFunctionality } from './sound_buttons/button_keydown.js'
+
 import { deleteFunctionality } from './edit_button/delete_functionality.js'
-import { editButtonHover } from './edit_button/edit_button_hover.js'
+// import { editTransition } from './edit_button/edit_transition.js'
 import { editButtonClick } from './edit_button/edit_button_click.js'
+
 import { renderArchivedSounds } from './archived_buttons/archived_render.js'
 
 
@@ -30,10 +33,14 @@ switch (randomNumberZeroToTen()) {
     break;
 }
 
+
 renderSounds();
+
 soundButtonFunctionality();
 buttonKeydownFunctionality();
+
 deleteFunctionality();
-editButtonHover();
+// editTransition();
 editButtonClick();
+
 renderArchivedSounds();
