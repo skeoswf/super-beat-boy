@@ -15,6 +15,8 @@ const editButtonClick = () => {
     editButton.classList.add("editBlink");
 
     if (!isEditing) {
+
+      soundsWrapper.classList.add("lock")
       editButton.classList.add("editButtonTwo");
       editButton.innerHTML = "done";
 
@@ -29,6 +31,7 @@ const editButtonClick = () => {
 
       dimOverlay.classList.remove("dimIn");
       dimOverlay.classList.add("dimOut");
+      soundsWrapper.classList.remove("lock")
 
       const handleAnimEnd = (e) => {
         if (e.animationName === "blinkOut") {

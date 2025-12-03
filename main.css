@@ -41,12 +41,18 @@
   animation: blinkIn 0.6s;
 }
 
-* {
-  cursor: crosshair;
+.lock .soundButton {
+  pointer-events: none;
 }
 
-.locked {
-  pointer-events: none;
+.lock .soundButton .editSound,
+.lock .soundButton .deleteSound {
+  pointer-events: auto;
+
+}
+
+* {
+  cursor: crosshair;
 }
 
 body {
@@ -153,7 +159,7 @@ body {
 
 
 #dimOverlay {
-  background-color: rgba(0, 37, 44, 0.685);
+  background-color: rgba(0, 37, 44, 0.521);
   height: 100vh;
   left: 0;
   opacity: 1;
@@ -161,7 +167,7 @@ body {
   top: 0;
   width: 100vw;
   z-index: 5;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .editSound {
