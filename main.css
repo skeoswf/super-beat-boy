@@ -34,7 +34,7 @@
 
 .dimOut {
   animation: blinkOut 0.6s;
-
+  animation-fill-mode: forwards;
 }
 
 .editBlink {
@@ -43,6 +43,10 @@
 
 * {
   cursor: crosshair;
+}
+
+.locked {
+  pointer-events: none;
 }
 
 body {
@@ -152,22 +156,25 @@ body {
   background-color: rgba(0, 37, 44, 0.685);
   height: 100vh;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
   position: fixed;
   top: 0;
   width: 100vw;
   z-index: 5;
-}
-
-.deleteSound:hover {
-  cursor: pointer;
+  pointer-events: auto;
 }
 
 .editSound {
   margin-left: 50%;
 }
 
+.editSound,
+.deleteSound {
+  position: relative;
+  z-index: 6;
+}
+
+.deleteSound:hover,
 .editSound:hover {
   cursor: pointer;
 }
