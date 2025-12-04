@@ -5,7 +5,6 @@ import { soundButtonFunctionality } from './sound_buttons/button_functionality.j
 import { buttonKeyDownFunctionality } from './sound_buttons/button_keydown.js'
 
 import { deleteFunctionality } from './edit_button/delete_functionality.js'
-// import { editTransition } from './edit_button/edit_transition.js'
 import { editButtonClick } from './edit_button/edit_button_click.js'
 
 import { renderArchivedSounds } from './archived_buttons/archived_render.js'
