@@ -1,4 +1,5 @@
 import { sounds } from "../sounds_data/sounds.js"
+import { randomSupaBeatBoy } from "./random_beatboy.js";
 
 const soundButtonFunctionality = () => {
   for (let i = 0; i < sounds.length; i++) {
@@ -8,6 +9,7 @@ const soundButtonFunctionality = () => {
     // cloneNode allows the sound to repeat over itself
     let soundsPlay = () => {
       let soundsPlay = soundsAudio.cloneNode();
+      randomSupaBeatBoy();
       soundsPlay.play();
     };
 
