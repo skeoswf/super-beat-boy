@@ -8,6 +8,7 @@ import { deleteFunctionality } from './edit_button/delete_functionality.js'
 import { editButtonClick } from './edit_button/edit_button_click.js'
 
 import { renderArchivedSounds } from './archived_buttons/archived_render.js'
+import { deleteArchivedFunctionality } from './archived_buttons/archived_delete.js'
 
 
 
@@ -39,7 +40,7 @@ soundButtonFunctionality();
 buttonKeyDownFunctionality();
 
 deleteFunctionality();
-// editTransition();
 editButtonClick();
 
 renderArchivedSounds();
+deleteArchivedFunctionality();
