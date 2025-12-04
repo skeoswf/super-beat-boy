@@ -1,3 +1,9 @@
+import {
+  buttonKeyDownFunctionality,
+  disableButtonKeyDownFunctionality
+}
+  from "../sound_buttons/button_keydown.js"
+
 const editButton = document.getElementById("editButton")
 const deleteButton = document.getElementsByClassName("deleteSound")
 const trueDeleteButton = document.getElementsByClassName("trueDeleteSound")
@@ -20,6 +26,8 @@ const editButtonClick = () => {
       editButton.classList.add("editButtonTwo");
       editButton.innerHTML = "done";
 
+      disableButtonKeyDownFunctionality();
+
       for (let btn of deleteButton) {
         btn.hidden = false;
       }
@@ -32,6 +40,8 @@ const editButtonClick = () => {
       dimOverlay.classList.remove("dimIn");
       dimOverlay.classList.add("dimOut");
       soundsWrapper.classList.remove("lock")
+
+      buttonKeyDownFunctionality();
 
       const handleAnimEnd = (e) => {
         if (e.animationName === "blinkOut") {
