@@ -9,7 +9,7 @@ planned features:
 
   - users can paste a youtube link, have it converted to an mp3, and it auto splice into separate buttons
     (i kinda want this to be the main shtick but we'll see)
-  - users can maybe record their own sounds generated
+  - users should be able to record what they made and save it as a sound file
 
 
 the following is a quick recording of an alpha build with some features implemented
