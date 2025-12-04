@@ -46,9 +46,9 @@
 }
 
 .lock .soundButton .editSound,
-.lock .soundButton .deleteSound {
+.lock .soundButton .deleteSound,
+.lock .archivedSoundButton .trueDeleteSound {
   pointer-events: auto;
-
 }
 
 * {
@@ -181,7 +181,8 @@ body {
 }
 
 .deleteSound:hover,
-.editSound:hover {
+.editSound:hover,
+.trueDeleteSound:hover {
   cursor: pointer;
 }
 

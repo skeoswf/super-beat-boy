@@ -2,7 +2,7 @@
 import { renderSounds } from './sound_buttons/buttons_render.js'
 
 import { soundButtonFunctionality } from './sound_buttons/button_functionality.js'
-import { buttonKeydownFunctionality } from './sound_buttons/button_keydown.js'
+import { buttonKeyDownFunctionality } from './sound_buttons/button_keydown.js'
 
 import { deleteFunctionality } from './edit_button/delete_functionality.js'
 // import { editTransition } from './edit_button/edit_transition.js'
@@ -37,7 +37,7 @@ switch (randomNumberZeroToTen()) {
 renderSounds();
 
 soundButtonFunctionality();
-buttonKeydownFunctionality();
+buttonKeyDownFunctionality();
 
 deleteFunctionality();
 // editTransition();
