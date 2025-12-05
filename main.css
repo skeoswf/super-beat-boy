@@ -223,3 +223,14 @@ body {
 
   animation: blinkIn 0.6s;
 }
+
+.changeBeatSettings {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+  margin: 0.5rem;
+  gap: 8px;
+  color: red;
+}
