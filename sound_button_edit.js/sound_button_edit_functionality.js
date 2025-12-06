@@ -1,23 +1,15 @@
 import { sounds } from "../sounds_data/sounds.js";
+import { renderSounds } from "../sound_buttons/buttons_render.js";
+import { renderArchivedSounds } from "../archived_buttons/archived_render.js";
 
 const soundButtonEditFunctionality = () => {
 
-  const editForm = document.getElementById("changeBeatSettings");
-  const renameBeatInput = document.getElementById("renameBeatField");
-  const rebindBeatInput = document.getElementById("rebindBeatField")
 
   soundsWrapper.addEventListener("mousedown", (e) => {
-    if (e.target.classListContains("editSound")) {
-      const [, id] = e.target.id.split("--")
-      const index = sounds.findIndex((sound) => sound.id === Number(id))
-      const currentEditSound = sounds.splice(index, 1)[0]
-    }
-  })
+    if (e.target.classList.contains("editSound")) {
 
-
-
-  let editFormHTML = `
-<form id="changeBeatSettings">
+      let editFormHTML = `
+  <form id="changeBeatSettings">
   <label for="renameBeatField">rename</label>
   <input type="text" name="beatName" id="renameBeatField" maxlength="12" />
 
@@ -27,15 +19,29 @@ const soundButtonEditFunctionality = () => {
   <button type="submit" id="acceptButton">accept</button>
 </form>
 `
+      utilityWrapper.innerHTML += editFormHTML
 
-  utilityWrapper.innerHTML += editFormHTML
+      const editForm = document.getElementById("changeBeatSettings");
+      const renameBeatInput = document.getElementById("renameBeatField");
+      const rebindBeatInput = document.getElementById("rebindBeatField")
+
+      const [, id] = e.target.id.split("--")
+      let currentEditSound = sounds.find((sound) => sound.id === Number(id))
 
 
-  editForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("rename's value", renameBeatInput.value)
-    console.log("rebinds's value", rebindBeatInput.value)
+      editForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        currentEditSound.name = renameBeatInput.value
+        currentEditSound.buttonAssigned = rebindBeatInput.value
+
+        renderSounds();
+        renderArchivedSounds();
+
+        console.log("this is the sounds after you clicked edit", sounds)
+      })
+    }
   })
+
 
 }
 
