@@ -224,7 +224,7 @@ body {
   animation: blinkIn 0.6s;
 }
 
-.changeBeatSettings {
+#changeBeatSettings {
   align-items: center;
   display: flex;
   justify-content: space-between;
