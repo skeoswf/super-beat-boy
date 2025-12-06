@@ -4,6 +4,8 @@ import {
 }
   from "../sound_buttons/button_keydown.js"
 
+import { soundButtonEditFunctionality } from "../sound_button_edit.js/sound_button_edit_functionality.js"
+
 const editButton = document.getElementById("editButton")
 const deleteButton = document.getElementsByClassName("deleteSound")
 const trueDeleteButton = document.getElementsByClassName("trueDeleteSound")
@@ -35,6 +37,8 @@ const editButtonClick = () => {
       for (let trueBtn of trueDeleteButton) {
         trueBtn.hidden = false;
       }
+
+      soundButtonEditFunctionality()
     } else {
 
       dimOverlay.classList.remove("dimIn");
