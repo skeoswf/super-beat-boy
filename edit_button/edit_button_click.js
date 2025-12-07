@@ -59,7 +59,7 @@ const editButtonClick = () => {
 
       editButton.classList.remove("editButtonTwo");
       editButton.innerHTML = "edit";
-
+      console.log("test")
       for (let btn of deleteButton) {
         btn.hidden = true;
       }
