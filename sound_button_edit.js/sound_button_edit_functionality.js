@@ -1,6 +1,7 @@
 import { sounds } from "../sounds_data/sounds.js";
 import { renderSounds } from "../sound_buttons/buttons_render.js";
 import { renderArchivedSounds } from "../archived_buttons/archived_render.js";
+import { soundButtonFunctionality } from "../sound_buttons/sound_button_functionality.js";
 
 const soundButtonEditFunctionality = () => {
 
@@ -9,18 +10,17 @@ const soundButtonEditFunctionality = () => {
     if (e.target.classList.contains("editSound")) {
 
       let editFormHTML = `
-  <form id="changeBeatSettings">
-  <label for="renameBeatField">rename</label>
-  <input type="text" name="beatName" id="renameBeatField" maxlength="12" />
+        <form id="changeBeatSettings">
+        <label for="renameBeatField">rename</label>
+        <input type="text" name="beatName" id="renameBeatField" maxlength="12" />
 
-  <label for="rebindBeatField">rebind</label>
-  <input type="text" name="beatKeybind" id="rebindBeatField" />
+        <label for="rebindBeatField">rebind</label>
+        <input type="text" name="beatKeybind" id="rebindBeatField" />
 
-  <button type="submit" id="acceptButton">accept</button>
-</form>
-`
-      utilityWrapper.innerHTML += editFormHTML
-
+        <button type="submit" id="acceptButton">accept</button>
+      </form>
+      `
+      formDisplay.innerHTML = editFormHTML
       const editForm = document.getElementById("changeBeatSettings");
       const renameBeatInput = document.getElementById("renameBeatField");
       const rebindBeatInput = document.getElementById("rebindBeatField")
@@ -36,6 +36,7 @@ const soundButtonEditFunctionality = () => {
 
         renderSounds();
         renderArchivedSounds();
+        soundButtonFunctionality();
 
         console.log("this is the sounds after you clicked edit", sounds)
       })

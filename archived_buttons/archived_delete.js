@@ -1,5 +1,5 @@
 import { sounds, deletedSounds } from "../sounds_data/sounds.js";
-import { soundButtonFunctionality } from "../sound_buttons/button_functionality.js";
+import { soundButtonFunctionality } from "../sound_buttons/sound_button_functionality.js";
 import { renderSounds } from "../sound_buttons/buttons_render.js";
 import { renderArchivedSounds } from "../archived_buttons/archived_render.js";
 

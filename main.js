@@ -1,7 +1,7 @@
 
 import { renderSounds } from './sound_buttons/buttons_render.js'
 
-import { soundButtonFunctionality } from './sound_buttons/button_functionality.js'
+import { soundButtonFunctionality } from './sound_buttons/sound_button_functionality.js'
 import { buttonKeyDownFunctionality } from './sound_buttons/button_keydown.js'
 
 import { deleteFunctionality } from './edit_button/delete_functionality.js'
@@ -10,55 +10,7 @@ import { editButtonClick } from './edit_button/edit_button_click.js'
 import { renderArchivedSounds } from './archived_buttons/archived_render.js'
 import { deleteArchivedFunctionality } from './archived_buttons/archived_delete.js'
 
-const superBeatBoyWrappa = document.getElementById("supaBeatBoyWrappa")
 
-const randomSupaBeatBoy = () => {
-  let roll = Math.floor(Math.random() * 10);
-
-  switch (roll) {
-    case (0):
-      console.log("you got a 0");
-      superBeatBoyWrappa.src = "./images/supabeatboy_topright.png"
-      break;
-    case (1):
-      console.log("you got a 1");
-      superBeatBoyWrappa.src = "./images/supabeatboy_topmiddle.png"
-      break;
-    case (2):
-      console.log("you got a 2");
-      superBeatBoyWrappa.src = "./images/supabeatboy_topleft.png"
-      break;
-    case (3):
-      console.log("you got a 3");
-      superBeatBoyWrappa.src = "./images/supabeatboy_middleright.png"
-      break;
-    case (4):
-      console.log("you got a 4");
-      superBeatBoyWrappa.src = "./images/supabeatboy_middlemiddle.png"
-      break;
-    case (5):
-      console.log("you got a 5");
-      superBeatBoyWrappa.src = "./images/supabeatboy_middleleft.png"
-      break;
-    case (6):
-      console.log("you got a 6");
-      superBeatBoyWrappa.src = "./images/supabeatboy_bottomright.png"
-      break;
-    case (7):
-      console.log("you got a 7");
-      superBeatBoyWrappa.src = "./images/supabeatboy_bottommiddle.png"
-      break;
-    case (8):
-      console.log("you got a 8");
-      superBeatBoyWrappa.src = "./images/supabeatboy_bottomleft.png"
-      break;
-    case (9):
-      console.log("you got a 9");
-      superBeatBoyWrappa.src = "./images/supabeatboy.png"
-      break;
-  };
-
-}
 
 renderSounds();
 
@@ -70,5 +22,3 @@ editButtonClick();
 
 renderArchivedSounds();
 deleteArchivedFunctionality();
-
-randomSupaBeatBoy();
