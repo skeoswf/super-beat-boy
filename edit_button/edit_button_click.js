@@ -41,9 +41,11 @@ const editButtonClick = () => {
       soundButtonEditFunctionality()
     } else {
 
+      formDisplay.innerHTML = "";
+      formDisplay.style.pointerEvents = "none";
       dimOverlay.classList.remove("dimIn");
       dimOverlay.classList.add("dimOut");
-      soundsWrapper.classList.remove("lock")
+      soundsWrapper.classList.remove("lock");
 
       buttonKeyDownFunctionality();
 
