@@ -231,8 +231,21 @@ body {
   position: relative;
   text-align: center;
   text-shadow: 0px 0px 8px #500000;
-
   animation: blinkIn 0.6s;
+}
+
+#formDisplay {
+  height: 250px;
+  width: 250px;
+  position: fixed;
+  z-index: 8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 
 #changeBeatSettings {
@@ -243,6 +256,6 @@ body {
   width: 50%;
   margin: 0.5rem;
   gap: 8px;
-  color: red;
-
+  color: rgb(253, 233, 233);
+  text-shadow: 0px 0px 5px rgb(156, 29, 29);
 }
