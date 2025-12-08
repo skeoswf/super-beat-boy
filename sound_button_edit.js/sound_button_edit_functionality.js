@@ -25,6 +25,10 @@ const soundButtonEditFunctionality = () => {
       formDisplay.innerHTML = editFormHTML;
       formDisplay.hidden = false;
 
+        <button type="submit" id="acceptButton">accept</button>
+      </form>
+      `
+      formDisplay.innerHTML = editFormHTML
       const editForm = document.getElementById("changeBeatSettings");
       const renameBeatInput = document.getElementById("renameBeatField");
       const rebindBeatInput = document.getElementById("rebindBeatField");
