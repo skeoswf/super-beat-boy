@@ -21,20 +21,36 @@ const soundButtonEditFunctionality = () => {
         </form>
       `;
 
-      formDisplay.style.pointerEvents = "auto"
+      formDisplay.style.pointerEvents = "auto";
       formDisplay.innerHTML = editFormHTML;
       formDisplay.hidden = false;
 
       const editForm = document.getElementById("changeBeatSettings");
+
       const renameBeatInput = document.getElementById("renameBeatField");
       const rebindBeatInput = document.getElementById("rebindBeatField");
 
+      // get which sound we're editing (from the clicked edit button)
       const [, id] = e.target.id.split("--");
       let currentEditSound = sounds.find((sound) => sound.id === Number(id));
 
-      editForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+      // handle keybinding input
+      rebindBeatInput.addEventListener("keydown", (event) => {
+        event.preventDefault();
+
+        if (event.key.length === 1) {
+          rebindBeatInput.value = event.key.toLowerCase();
+        } else {
+          rebindBeatInput.value = event.code;
+        }
+      });
+
+      // handle form submit
+      editForm.addEventListener("submit", (event) => {
+        event.preventDefault();
         formDisplay.innerHTML = "";
+        formDisplay.hidden = true;
+        formDisplay.style.pointerEvents = "none";
 
         currentEditSound.name = renameBeatInput.value;
         currentEditSound.buttonAssigned = rebindBeatInput.value;
