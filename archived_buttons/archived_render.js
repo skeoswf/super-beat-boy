@@ -8,7 +8,9 @@ const renderArchivedSounds = () => {
       soundsWrapperContent += `
         <button class="archivedSoundButton" id="${deletedSounds[i].name}Button--${deletedSounds[i].id}">
           <p class="sound">${deletedSounds[i].name}</p>
-          <span class="trueDeleteSound" id="delete--${deletedSounds[i].id}" hidden>🗑️</span>
+          <span class="trueDeleteSound" id="delete--${deletedSounds[i].id}" hidden>🗑️
+            <span class=unarchiveSound id="unarchive--${deletedSounds[i].id}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➕</span>
+          </span>
         </button>
       `;
     }

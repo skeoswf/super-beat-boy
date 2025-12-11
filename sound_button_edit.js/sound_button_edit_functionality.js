@@ -12,10 +12,10 @@ const soundButtonEditFunctionality = () => {
       let editFormHTML = `
         <form id="changeBeatSettings">
           <label for="renameBeatField">rename</label>
-          <input type="text" name="beatName" id="renameBeatField" maxlength="12" />
+          <input type="text" name="beatName" id="renameBeatField" maxlength="12" required/>
 
           <label for="rebindBeatField">rebind</label>
-          <input type="text" name="beatKeybind" id="rebindBeatField" />
+          <input type="text" name="beatKeybind" id="rebindBeatField" required/>
 
           <button type="submit" id="acceptButton">accept</button>
         </form>
