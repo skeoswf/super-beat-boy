@@ -9,6 +9,9 @@ import { editButtonClick } from './edit_button/edit_button_click.js'
 
 import { renderArchivedSounds } from './archived_buttons/archived_render.js'
 import { deleteArchivedFunctionality } from './archived_buttons/archived_delete.js'
+import { unArchiveFunctionality } from './archived_buttons/unarchive.js'
+
+
 
 
 
@@ -22,3 +25,4 @@ editButtonClick();
 
 renderArchivedSounds();
 deleteArchivedFunctionality();
+unArchiveFunctionality();
