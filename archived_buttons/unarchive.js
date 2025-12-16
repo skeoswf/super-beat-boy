@@ -3,42 +3,39 @@ import { soundButtonFunctionality } from "../sound_buttons/sound_button_function
 import { renderSounds } from "../sound_buttons/buttons_render.js";
 import { renderArchivedSounds } from "../archived_buttons/archived_render.js";
 
-const trueDeleteButton = document.getElementsByClassName("trueDeleteSound")
-const deleteButton = document.getElementsByClassName("deleteSound")
+const trueDeleteButton = document.getElementsByClassName("trueDeleteSound");
+const deleteButton = document.getElementsByClassName("deleteSound");
 
-const deleteArchivedFunctionality = () => {
+const unArchiveFunctionality = () => {
   archivedSoundsWrapper.addEventListener("mousedown", (e) => {
-    if (e.target.classList.contains("trueDeleteSound")) {
-      const [, id] = e.target.id.split("--")
-      const index = deletedSounds.findIndex((deletedSound) => deletedSound.id === Number(id))
-      deletedSounds.splice(index, 1)[0]
-
-      if (deletedSounds.length >= 1) {
-
-        renderSounds();
-        renderArchivedSounds();
-
-        // keeps the delete after each rerender 
-        for (let btn of deleteButton) {
-          btn.hidden = false;
-        }
-
-        for (let trueBtn of trueDeleteButton) {
-          trueBtn.hidden = false;
-        }
-
-        soundButtonFunctionality();
-      } else {
-
-        renderSounds();
-        renderArchivedSounds();
-
-      }
-
-    } else {
-      console.log("error with deleting archived sounds")
+    if (!e.target.classList.contains("unarchiveSound")) {
+      renderSounds();
+      renderArchivedSounds();
+      return;
     }
-  })
+
+    const [, id] = e.target.id.split("--");
+    const index = deletedSounds.findIndex(
+      (unarchived) => unarchived.id === Number(id)
+    );
+    const unarchivedSound = deletedSounds.splice(index, 1)[0]
+
+    if (sounds.length >= 1) {
+      unarchivedSound.active = true;
+      sounds.push(unarchivedSound);
+
+      renderSounds();
+      renderArchivedSounds();
+
+      // keep delete buttons visible after rerender
+      for (let btn of deleteButton) btn.hidden = false;
+      for (let trueBtn of trueDeleteButton) trueBtn.hidden = false;
+
+      soundButtonFunctionality();
+    } else {
+      soundsWrapper.innerHTML = "WHAT SOUNDS YOU TRYNA PLAY PLAYA!!";
+    }
+  });
 };
 
-export { deleteArchivedFunctionality }
+export { unArchiveFunctionality };
